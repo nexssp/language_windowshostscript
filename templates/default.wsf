@@ -1,0 +1,46 @@
+' Default Template for Windows Script Host Files
+<job>
+<script language="JScript">
+var htmlfile = WSH.CreateObject('htmlfile'), JSON;
+htmlfile.write('<meta http-equiv="x-ua-compatible" content="IE=9" />');
+htmlfile.close(JSON = htmlfile.parentWindow.JSON);
+
+
+
+
+// var pretty = JSON.stringify(JSON.parse(json), null, '\t');
+// WSH.Echo(pretty);
+
+</script>
+<script language="VBScript">
+Function ParseJson(strJson) 
+  Dim html, window 
+
+  Set html = CreateObject("htmlfile") 
+  Set window = html.parentWindow 
+  window.execScript "var json = " & strJson, "JScript" 
+  Set ParseJson = window.json 
+End Function 
+
+
+input_stdin = Wscript.StdIn.ReadAll
+
+Set objStdOut = WScript.StdOut
+Set output = ParseJson(objStdOut)
+
+' Select Case Ping
+'   Case 0
+'     WScript.Echo "Site is available: " & strTarget
+'   Case 1
+'     WScript.Echo "Site is not available: " & strTarget
+' End Select
+
+' Output can be JSON or String. Return final state of the program.
+' Keep big data as images, videos on the storage like HDD.
+objStdOut.write input_stdin
+
+' strUserName=Inputbox("Enter the default User Name","Input Required")
+' strPassword=Inputbox("Enter the default Password","Input Required")
+WScript.Quit
+</script>
+</job>
