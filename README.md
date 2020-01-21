@@ -9,3 +9,7 @@ JSON still needs to be implemented manually, so please be aware that this librar
 However you can compile them just by command 'nexss myfile.wsf'.
 
 Also you can use templates system and add your own ones. `nexss file add my.vbs` .. this will display templates list more here [Nexss Programmer Concept](https://github.com/nexssp/cli/wiki/Concept-Overview#use-predefined-templates)
+
+## Links
+
+<https://github.com/duncansmart/coffeescript-windows/blob/master/coffee.wsf>
